@@ -19,7 +19,8 @@ public class FunctionInterface {
 	
 		
 		//List<Integer> op = l.stream().map(f).collect(Collectors.toList());
-		List<Integer> op = l.stream().map(new FunctionInterface() :: neeraj).collect(Collectors.toList());
+		List<Integer> op = l.stream().map(i->i*5).collect(Collectors.toList());
+		//List<Integer> op = l.stream().map(new FunctionInterface() :: neeraj).collect(Collectors.toList());
 		System.out.println(op);
 		
 	}
