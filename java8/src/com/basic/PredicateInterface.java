@@ -15,6 +15,15 @@ public static void main(String[] args) {
  // find even no. and find sum of square of numbers(4+16+36 =56)
  int sum = list.stream().filter(p).map(y->y*y).reduce(0,(a,b)->a+b).intValue();
  
+ //or
+ list.stream().filter(p).mapToInt(y->y*y).sum();
+ 
+ //or
+ 
+ list.stream().filter(p).map(y->y*y).reduce(0,Integer:: sum).intValue();
+ 
+ //or 
+ 
  System.out.println(sum);
 }
 }

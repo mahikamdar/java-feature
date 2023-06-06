@@ -11,10 +11,12 @@ public class BiFunctionEx {
 		
 		BiFunction<Integer,Integer,Integer> half = (x,y)->(x+y)/2;
 		Function<Integer,Integer> mul = z->z*2;
+		
 		BiFunction<Integer,Integer,Integer> f1 = half.andThen(mul);
 		
 		System.out.println(f1.apply(5, 10));
 		
 	}
 
-}
+} 
+
