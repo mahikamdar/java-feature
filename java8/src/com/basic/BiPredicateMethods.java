@@ -1,6 +1,7 @@
 package com.basic;
 
 import java.util.function.BiPredicate;
+import java.util.function.IntPredicate;
 
 public class BiPredicateMethods {
 public static void main(String[] args) {
@@ -20,10 +21,14 @@ BiPredicate<String, Integer> b = (x,y)->x.length()==y;
 	
 	BiPredicate<String, Integer> output4 = output1.negate();
 	
-	System.out.println(output1.test("neeraj", 6));
-	System.out.println(output4.test("neeraj", 6));
-	System.out.println(output2.test("neeraj", 6));
-	System.out.println(output3.test("neeraj", 6));
+//	System.out.println(output1.test("neeraj", 6));
+//	System.out.println(output4.test("neeraj", 6));
+//	System.out.println(output2.test("neeraj", 6));
+//	System.out.println(output3.test("neeraj", 6));
+	
+	IntPredicate b4 = x->x>5;
+	
+	System.out.println(b4.test(10));
 	
 }
 }
