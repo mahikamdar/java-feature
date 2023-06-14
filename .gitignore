@@ -4,3 +4,15 @@ java8/.project
 java8/.settings/
 java8/bin/
 java8/src/module-info.java
+
+//in ignore case by neeraj gupta
+
+java8Feature/.classpath
+java8Feature/.project
+java8Feature/.settings/
+java8Feature/bin/
+java8Feature/src/module-info.java
+
+DS/.classpath
+DS/.project
+DS/.bin

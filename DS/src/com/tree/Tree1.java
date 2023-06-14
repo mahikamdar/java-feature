@@ -1,5 +1,7 @@
 package com.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Tree1 {
@@ -15,10 +17,46 @@ public static void main(String[] args) {
 	t.root.right.left=new Node(6);
 	t.root.right.right=new Node(7);
 	t.printtree(t.root);
+	System.out.print("-->  \n");
+	t.printsimoletree(t.root);
 	
 
 	
 }
+
+
+private void printsimoletree(Node root) {
+	
+	if(root==null) {return;}
+	
+	System.out.print(+root.data+"  ");
+	
+	if(root.left!=null ) {
+		printsimoletree(root.left);
+	}
+	if(root.right!=null) {
+		printsimoletree(root.right);
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 private void printtree(Node root2) {
 	if(root==null) {
 		return;
@@ -29,7 +67,7 @@ private void printtree(Node root2) {
 	boolean flag=true;
 	while(!currentLevel.isEmpty()) {
 		Node node=currentLevel.pop();
-		System.out.println(node.data);
+		System.out.print(node.data+",  ");
 		if(flag) {
 			if(node.left!=null)nextLevel.add(node.left);
 			if(node.right!=null)nextLevel.add(node.right);
