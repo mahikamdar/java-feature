@@ -5,7 +5,6 @@ import java.util.Stack;
 public class Tree1 {
 	Node root;
 public static void main(String[] args) {
-
 	Tree1 t=new Tree1();
 	t.root=new Node(1);
 	t.root.left=new Node(2);
@@ -14,12 +13,12 @@ public static void main(String[] args) {
 	t.root.left.right=new Node(5);
 	t.root.right.left=new Node(6);
 	t.root.right.right=new Node(7);
-	t.printtree(t.root);
+	t.printtree();
 	
 
 	
 }
-private void printtree(Node root2) {
+private void printtree() {
 	if(root==null) {
 		return;
 	}
@@ -29,7 +28,7 @@ private void printtree(Node root2) {
 	boolean flag=true;
 	while(!currentLevel.isEmpty()) {
 		Node node=currentLevel.pop();
-		System.out.println(node.data);
+		System.out.print(node.data+" , ");
 		if(flag) {
 			if(node.left!=null)nextLevel.add(node.left);
 			if(node.right!=null)nextLevel.add(node.right);
