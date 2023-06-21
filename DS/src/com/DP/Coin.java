@@ -1,4 +1,4 @@
-package com.list.DP;
+package com.DP;
 
 import java.util.Scanner;
 

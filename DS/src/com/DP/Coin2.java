@@ -1,4 +1,4 @@
-package com.list.DP;
+package com.DP;
 
 public class Coin2 {
 	public static void main(String[] args) {

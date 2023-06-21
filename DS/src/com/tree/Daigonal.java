@@ -15,7 +15,7 @@ public class Daigonal {
 		d.root.left.right=new Node(5);
 		d.root.right.left=new Node(6);
 		d.root.right.right=new Node(7);
-		diagnoalPrint(root);
+		diagnoalPrint(d.root);
 	}
 	public static void diagnoalPrint(Node root) {
 		TreeMap<Integer, List<Integer>> map=new TreeMap<>();
