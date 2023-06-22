@@ -12,5 +12,6 @@ public class AInfo {
 	//forEach(Consumer)
 	//generate(Supplier)
 	//reduce(0,BinaryOperator)
-	
+	//anyMatch(Predicate)
+	//AllMatch(Predicate) stream ko ak hi bar use kr sakte hai
 }
