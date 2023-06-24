@@ -25,15 +25,32 @@ public class GroupBy1 {
 		Map<BlogPostType, Optional<BlogPost>> min = list.stream().collect(Collectors.groupingBy(x->x.type,Collectors.minBy(c)));
 		 
 		 
-		System.out.println(min);
+		//System.out.println(min);
+		
+		//or
+		
 //		Map<BlogPostType, Optional<BlogPost>> maxLikesPerPostType = list.stream()
 //				  .collect(Collectors.groupingBy(BlogPost::getType,
 //						  Collectors.maxBy(Comparator.comparing(BlogPost::getLikes))));
 //		
 //		System.out.println(maxLikesPerPostType);
 		
+		//get Map where key is type and values is group of count
+		Map<BlogPostType, Long> count = list.stream().collect(Collectors.groupingBy(x->x.type,Collectors.counting()));
+		//System.out.println(count);
 		
-
+		//group of author but likes should be greater than or equal 50
+		// Map<String, List<BlogPost>> filter = list.stream().collect(Collectors.groupingBy(x->x.author,Collectors.filtering(y->y.likes>=50, Collectors.toList())));
+// or
+		Map<String, List<BlogPost>> filter = list.stream().filter(x->x.likes>=50).collect(Collectors.groupingBy(x->x.author));
+		// System.out.println(filter);
+		 
+		 //get Map where key is type and values is list  of likes
+		 Map<BlogPostType, List<Integer>> likes = list.stream().collect(Collectors.groupingBy(x->x.type,Collectors.mapping(y->y.likes, Collectors.toList())));
+		 
+		 //group of author and list of likes
+		 Map<String, List<Integer>> author = list.stream().collect(Collectors.groupingBy(x->x.author,Collectors.mapping(y->y.likes, Collectors.toList())));
+	System.out.println(author);
 	}
 
 	private static List<BlogPost> getList() {
