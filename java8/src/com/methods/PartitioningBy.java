@@ -9,10 +9,13 @@ public class PartitioningBy {
 
 	public static void main(String[] args) {
 		List<BlogPost> list =	getList();
-		//prepare separate list of likes less than 50 and vice-versa
+		//prepare separate list of blogpost less than 50 and vice-versa
 		Map<Boolean, List<BlogPost>> part = list.stream().collect(Collectors.partitioningBy(x->x.likes<50));
-		System.out.println(part);
-		//
+		//System.out.println(part);
+		//prepare separate list of like less than 50 and vice-versa
+		Map<Boolean, List<Integer>> likes = list.stream().collect(Collectors.partitioningBy(x->x.likes<50,
+				Collectors.mapping(x->x.likes, Collectors.toList())));
+		System.out.println(likes);
 	}
 private static List<BlogPost> getList() {
 		

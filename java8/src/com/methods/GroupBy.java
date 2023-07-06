@@ -32,6 +32,8 @@ public class GroupBy {
 		   Stream.of(collect2).flatMap(y->Stream.of(y)).flatMap(z->Stream.of(z)).forEach(w->System.out.println(w));
 		   
 		   
+		   
+		   
 	}
 	
 private static List<BlogPost> getList() {
