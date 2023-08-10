@@ -14,9 +14,12 @@ public class Ex1 {
 		//1) Given a list of numbers, return the sum of all numbers.
 		int intValue = l.stream().reduce(b).get();
 		
-		 int intValue2 = l.stream().reduce(0,b).intValue();
+		 int intValue2 = l.stream().reduce(500,b).intValue();
+		 
+		 int i = l.stream().reduce((x,y)->x+y).get();
 		System.out.println(intValue);
 		System.out.println(intValue2);
+		System.out.println(i);
 		
 		//
 	
